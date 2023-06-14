@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import NavBar from './sideBar';
+import NavBar from './sideBarContent';
 
 import styled from 'styled-components';
 
