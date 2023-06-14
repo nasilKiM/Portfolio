@@ -1,5 +1,5 @@
 const Skill = () => {
-  return <div>:)</div>;
+	return <div>스킬모음</div>;
 };
 
 export default Skill;

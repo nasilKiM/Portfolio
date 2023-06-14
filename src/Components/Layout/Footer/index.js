@@ -19,7 +19,6 @@ const FooterWrap = styled.div`
 	height: 200px;
 	background-color: ${({ theme }) => theme.color.primary[200]};
 	padding-top: 30px;
-	font-family: 'Nanum_extraBold';
 	position: absolute;
 	margin-top: 100px;
 `;
@@ -41,7 +40,7 @@ const Text1 = styled.div`
 	padding-bottom: 10px;
 `;
 
-const Logo = styled.img`
+const Logo = styled.div`
 	max-width: 250px;
 	@media (max-width: 800px) {
 		width: 200px;

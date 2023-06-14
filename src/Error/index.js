@@ -43,7 +43,7 @@ const ImageContainer = styled.div`
 	justify-content: center;
 `;
 
-const ErrorImage = styled.img`
+const ErrorImage = styled.div`
 	width: 400px;
 	margin-top: 100px;
 	@media (max-width: 700px) {

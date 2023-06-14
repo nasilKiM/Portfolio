@@ -1,11 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
+import WebHeader from './Header';
 
 const Layout = () => {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
+	return (
+		<div>
+			<WebHeader />
+			<Outlet />
+		</div>
+	);
 };
 
 export default Layout;
