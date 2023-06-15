@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import SideNavBar from './Components/sideNavBar';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+
 const professions = ['Designer', 'Developer', 'Freelancer', 'Photographer'];
 const colors = [
 	'#4484ce',
@@ -15,6 +18,8 @@ const colors = [
 const HomePage = () => {
 	const [professionIndex, setProfessionIndex] = useState(0);
 	const [gradientIndex, setGradientIndex] = useState(0);
+	const [showSideNavBar, setShowSideNavBar] = useState(false);
+	const [toggleIcon, setToggleIcon] = useState(false);
 
 	useEffect(() => {
 		const professionInterval = setInterval(() => {
@@ -35,9 +40,33 @@ const HomePage = () => {
 		};
 	}, []);
 
+	const handleToggleSideNavBar = () => {
+		setShowSideNavBar(!showSideNavBar);
+		setToggleIcon(!toggleIcon);
+	};
+
 	return (
 		<HomeWrapper gradientIndex={gradientIndex}>
-			<SideBarWrapper>
+			<Icons>
+				{toggleIcon ? (
+					<FontAwesomeIcon
+						icon={faXmark}
+						color="white"
+						cursor="pointer"
+						fontSize="38px"
+						onClick={handleToggleSideNavBar}
+					/>
+				) : (
+					<FontAwesomeIcon
+						icon={faBars}
+						color="white"
+						cursor="pointer"
+						fontSize="32px"
+						onClick={handleToggleSideNavBar}
+					/>
+				)}
+			</Icons>
+			<SideBarWrapper showSideNavBar={showSideNavBar}>
 				<SideNavBar />
 			</SideBarWrapper>
 			<ContentWrapper>
@@ -54,7 +83,10 @@ const HomeWrapper = styled.div`
 	display: flex;
 	width: 100%;
 	height: 100vh;
-
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
 	transition: background 1s linear;
 	background: linear-gradient(
 		135deg,
@@ -63,22 +95,32 @@ const HomeWrapper = styled.div`
 	);
 `;
 
+const Icons = styled.div`
+	position: fixed;
+	right: 15px;
+	top: 10px;
+	padding: 10px;
+`;
+
 const SideBarWrapper = styled.div`
-	/* @media (max-width: 1199px) {
-		display: block;
+	@media (max-width: 1199px) {
+		display: ${({ showSideNavBar }) => (showSideNavBar ? 'block' : 'none')};
 		position: fixed;
 		left: 0;
 		top: 0;
 		height: 100vh;
+	}
+	/* @media (min-width: 0px) and (max-width: 1199px) {
+		display: ${({ showSideNavBar }) => (showSideNavBar ? 'block' : 'none')};
 	} */
 `;
 
 const ContentWrapper = styled.div`
-	width: 100%;
 	color: white;
 	flex-direction: column;
-	text-align: center;
+	align-items: center;
 	justify-content: center;
+
 	h1 {
 		font-size: 100px;
 	}

@@ -1,9 +1,16 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const SideNavBar = () => {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleToggleSideNavBar = () => {
+		setIsOpen(!isOpen);
+	};
+
 	return (
 		<>
-			<Wrapper>
+			<Wrapper isOpen={isOpen}>
 				<Container>
 					<Profile>
 						<img src="/Assets/Img/defaultProfile.png" />
@@ -43,17 +50,13 @@ const Wrapper = styled.div`
 	top: 0;
 	left: 0;
 	bottom: 0;
-	width: 300px;
+	width: 250px;
 	transition: all ease-in-out 0.5s;
 	z-index: 9997;
 	transition: all 0.5s;
 	padding: 0 15px;
-	background: gray;
+	background: white;
 	overflow-y: auto;
-
-	@media (max-width: 1199px) {
-		left: -300px;
-	}
 `;
 
 const Container = styled.div`
