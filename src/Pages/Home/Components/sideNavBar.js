@@ -1,34 +1,42 @@
-import { Link } from 'react-router-dom';
-import NavBar from './sideBarContent';
-
 import styled from 'styled-components';
 
-const SideBarUpper = () => {
+const SideNavBar = () => {
 	return (
 		<>
 			<Wrapper>
 				<Container>
 					<Profile>
 						<img src="/Assets/Img/defaultProfile.png" />
-						<h1>
-							<a href="index.html">KIM NASIL</a>
-						</h1>
-						<SNSContainer>
-							<Link to="/">twitter</Link>
-							<Link to="/">facebook</Link>
-							<Link to="/">instagram</Link>
-							<Link to="/">google-plus</Link>
-							<Link to="/">linkedin</Link>
-						</SNSContainer>
+						<h1>KIM NASIL</h1>
 					</Profile>
-					<NavBar />
+					<SNSContainer>
+						<div>github</div>
+						<div>tistory</div>
+						<div>linkedin</div>
+					</SNSContainer>
+
+					<div>
+						<span>HOME</span>
+					</div>
+					<div>
+						<span>About</span>
+					</div>
+					<div>
+						<span>Resume</span>
+					</div>
+					<div>
+						<span>Portfolio</span>
+					</div>
+					<div>
+						<span>Contact</span>
+					</div>
 				</Container>
 			</Wrapper>
 		</>
 	);
 };
 
-export default SideBarUpper;
+export default SideNavBar;
 
 const Wrapper = styled.div`
 	position: fixed;
@@ -40,7 +48,7 @@ const Wrapper = styled.div`
 	z-index: 9997;
 	transition: all 0.5s;
 	padding: 0 15px;
-	background: #040b14;
+	background: gray;
 	overflow-y: auto;
 
 	@media (max-width: 1199px) {
@@ -51,10 +59,6 @@ const Wrapper = styled.div`
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-left: 300px;
-	@media (max-width: 1199px) {
-		margin-left: 0;
-	}
 `;
 
 const Profile = styled.div`
@@ -84,20 +88,14 @@ const Profile = styled.div`
 
 const SNSContainer = styled.div`
 	font-size: 18px;
-	display: inline-block;
-	background: #212431;
-	color: #fff;
-	line-height: 1;
-	padding: 8px 0;
-	margin-right: 4px;
-	border-radius: 50%;
+	padding: 15px 0;
 	text-align: center;
-	width: 36px;
-	height: 36px;
 	transition: 0.3s;
-	:hover {
-		background: #149ddd;
-		color: #fff;
-		text-decoration: none;
+	div {
+		:hover {
+			background: #149ddd;
+			color: #fff;
+			text-decoration: none;
+		}
 	}
 `;

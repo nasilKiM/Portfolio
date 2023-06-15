@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
+import SideNavBar from './Components/sideNavBar';
 
 const professions = ['Designer', 'Developer', 'Freelancer', 'Photographer'];
 const colors = [
@@ -36,7 +37,9 @@ const HomePage = () => {
 
 	return (
 		<HomeWrapper gradientIndex={gradientIndex}>
-			<SideBarWrapper></SideBarWrapper>
+			<SideBarWrapper>
+				<SideNavBar />
+			</SideBarWrapper>
 			<ContentWrapper>
 				<h1>KIM NASIL</h1>
 				<div>{professions[professionIndex]}</div>
@@ -49,11 +52,9 @@ export default HomePage;
 
 const HomeWrapper = styled.div`
 	display: flex;
-	flex-direction: column;
 	width: 100%;
 	height: 100vh;
-	text-align: center;
-	justify-content: center;
+
 	transition: background 1s linear;
 	background: linear-gradient(
 		135deg,
@@ -63,15 +64,21 @@ const HomeWrapper = styled.div`
 `;
 
 const SideBarWrapper = styled.div`
-	width: 300px;
-	@media (max-width: 768px) {
-		display: none;
-	}
+	/* @media (max-width: 1199px) {
+		display: block;
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100vh;
+	} */
 `;
 
 const ContentWrapper = styled.div`
 	width: 100%;
 	color: white;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
 	h1 {
 		font-size: 100px;
 	}
