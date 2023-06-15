@@ -17,26 +17,18 @@ const SideNavBar = () => {
 						<h1>KIM NASIL</h1>
 					</Profile>
 					<SNSContainer>
-						<div>github</div>
-						<div>tistory</div>
-						<div>linkedin</div>
+						<img src="/Assets/Icon/githubicon.png" />
+						<img src="/Assets/Icon/tistoryicon.png" />
+						<img src="/Assets/Icon/linkedinicon.png" />
 					</SNSContainer>
 
-					<div>
+					<MenuWrapper>
 						<span>HOME</span>
-					</div>
-					<div>
 						<span>About</span>
-					</div>
-					<div>
 						<span>Resume</span>
-					</div>
-					<div>
 						<span>Portfolio</span>
-					</div>
-					<div>
 						<span>Contact</span>
-					</div>
+					</MenuWrapper>
 				</Container>
 			</Wrapper>
 		</>
@@ -62,6 +54,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
+	padding-top: 40px;
 `;
 
 const Profile = styled.div`
@@ -77,28 +70,40 @@ const Profile = styled.div`
 	h1 {
 		font-size: 24px;
 		margin: 0;
-		padding: 0;
+		padding: 10px 0;
 		font-weight: 600;
 		-moz-text-align-last: center;
 		text-align-last: center;
 		font-family: 'Poppins', sans-serif;
-		:hover {
-			color: #fff;
-			text-decoration: none;
-		}
 	}
 `;
 
 const SNSContainer = styled.div`
 	font-size: 18px;
-	padding: 15px 0;
+	padding: 20px 0;
 	text-align: center;
-	transition: 0.3s;
-	div {
+	img {
+		width: 40px;
+		margin-right: 15px;
 		:hover {
-			background: #149ddd;
-			color: #fff;
-			text-decoration: none;
+			border-radius: 50%;
+			border: 1px solid #ffecec;
+			cursor: pointer;
+		}
+	}
+`;
+
+const MenuWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+	gap: 30px;
+	font-size: 24px;
+	font-weight: bold;
+	span {
+		:hover {
+			color: red;
+			cursor: pointer;
 		}
 	}
 `;

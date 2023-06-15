@@ -4,6 +4,7 @@ import SideNavBar from './Components/sideNavBar';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { useMediaQuery } from 'react-responsive';
 
 const professions = ['Designer', 'Developer', 'Freelancer', 'Photographer'];
 const colors = [
@@ -20,6 +21,7 @@ const HomePage = () => {
 	const [gradientIndex, setGradientIndex] = useState(0);
 	const [showSideNavBar, setShowSideNavBar] = useState(false);
 	const [toggleIcon, setToggleIcon] = useState(false);
+	const isTablet = useMediaQuery({ query: '(max-width: 1190px)' });
 
 	useEffect(() => {
 		const professionInterval = setInterval(() => {
@@ -47,25 +49,27 @@ const HomePage = () => {
 
 	return (
 		<HomeWrapper gradientIndex={gradientIndex}>
-			<Icons>
-				{toggleIcon ? (
-					<FontAwesomeIcon
-						icon={faXmark}
-						color="white"
-						cursor="pointer"
-						fontSize="38px"
-						onClick={handleToggleSideNavBar}
-					/>
-				) : (
-					<FontAwesomeIcon
-						icon={faBars}
-						color="white"
-						cursor="pointer"
-						fontSize="32px"
-						onClick={handleToggleSideNavBar}
-					/>
-				)}
-			</Icons>
+			{isTablet && (
+				<Icons>
+					{toggleIcon ? (
+						<FontAwesomeIcon
+							icon={faXmark}
+							color="white"
+							cursor="pointer"
+							fontSize="38px"
+							onClick={handleToggleSideNavBar}
+						/>
+					) : (
+						<FontAwesomeIcon
+							icon={faBars}
+							color="white"
+							cursor="pointer"
+							fontSize="32px"
+							onClick={handleToggleSideNavBar}
+						/>
+					)}
+				</Icons>
+			)}
 			<SideBarWrapper showSideNavBar={showSideNavBar}>
 				<SideNavBar />
 			</SideBarWrapper>
