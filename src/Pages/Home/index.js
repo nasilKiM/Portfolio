@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import SideNavBar from './Components/sideNavBar';
 
@@ -7,14 +7,18 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from 'react-responsive';
 
 const professions = ['Designer', 'Developer', 'Freelancer', 'Photographer'];
-const colors = [
-	'#4484ce',
-	'#1ad7c0',
-	'#ff9b11',
-	'#9b59b6',
-	'#ff7f7f',
-	'#ecf0f1',
-];
+
+const backgroundChange = keyframes`
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+`;
 
 const HomePage = () => {
 	const [professionIndex, setProfessionIndex] = useState(0);
@@ -30,14 +34,7 @@ const HomePage = () => {
 			);
 		}, 2000);
 
-		const gradientInterval = setInterval(() => {
-			setGradientIndex(prevIndex =>
-				prevIndex === colors.length - 1 ? 0 : prevIndex + 1,
-			);
-		}, 4000);
-
 		return () => {
-			clearInterval(gradientInterval);
 			clearInterval(professionInterval);
 		};
 	}, []);
@@ -48,7 +45,7 @@ const HomePage = () => {
 	};
 
 	return (
-		<HomeWrapper gradientIndex={gradientIndex}>
+		<HomeWrapper>
 			{isTablet && (
 				<Icons>
 					{toggleIcon ? (
@@ -91,12 +88,18 @@ const HomeWrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 	margin: 0 auto;
-	transition: background 1s linear;
 	background: linear-gradient(
 		135deg,
-		${props => colors[props.gradientIndex]},
-		${props => colors[(props.gradientIndex + 1) % colors.length]}
+		#4484ce,
+		#1ad7c0,
+		#ff9b11,
+		#9b59b6,
+		#ff7f7f,
+		#ecf0f1
 	);
+	background-size: 400% 400%;
+	animation: ${backgroundChange} 25s ease-in-out infinite;
+	overflow: hidden;
 `;
 
 const Icons = styled.div`
@@ -114,9 +117,6 @@ const SideBarWrapper = styled.div`
 		top: 0;
 		height: 100vh;
 	}
-	/* @media (min-width: 0px) and (max-width: 1199px) {
-		display: ${({ showSideNavBar }) => (showSideNavBar ? 'block' : 'none')};
-	} */
 `;
 
 const ContentWrapper = styled.div`
