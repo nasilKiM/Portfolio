@@ -5,8 +5,12 @@ import SideNavBar from './Components/sideNavBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from 'react-responsive';
+import Projects from 'Pages/Projects';
+import About from 'Pages/About';
+import Skill from 'Pages/Skill';
+import Contact from 'Pages/Contact';
 
-const professions = ['Designer', 'Developer', 'Freelancer', 'Photographer'];
+const professions = ['Developer', 'Challenger', 'TeamWorker'];
 
 const backgroundChange = keyframes`
 	0% {
@@ -22,7 +26,6 @@ const backgroundChange = keyframes`
 
 const HomePage = () => {
 	const [professionIndex, setProfessionIndex] = useState(0);
-	const [gradientIndex, setGradientIndex] = useState(0);
 	const [showSideNavBar, setShowSideNavBar] = useState(false);
 	const [toggleIcon, setToggleIcon] = useState(false);
 	const isTablet = useMediaQuery({ query: '(max-width: 1190px)' });
@@ -45,36 +48,42 @@ const HomePage = () => {
 	};
 
 	return (
-		<HomeWrapper>
-			{isTablet && (
-				<Icons>
-					{toggleIcon ? (
-						<FontAwesomeIcon
-							icon={faXmark}
-							color="white"
-							cursor="pointer"
-							fontSize="38px"
-							onClick={handleToggleSideNavBar}
-						/>
-					) : (
-						<FontAwesomeIcon
-							icon={faBars}
-							color="white"
-							cursor="pointer"
-							fontSize="32px"
-							onClick={handleToggleSideNavBar}
-						/>
-					)}
-				</Icons>
-			)}
-			<SideBarWrapper showSideNavBar={showSideNavBar}>
-				<SideNavBar />
-			</SideBarWrapper>
-			<ContentWrapper>
-				<h1>KIM NASIL</h1>
-				<div>{professions[professionIndex]}</div>
-			</ContentWrapper>
-		</HomeWrapper>
+		<>
+			<HomeWrapper>
+				{isTablet && (
+					<Icons>
+						{toggleIcon ? (
+							<FontAwesomeIcon
+								icon={faXmark}
+								color="white"
+								cursor="pointer"
+								fontSize="38px"
+								onClick={handleToggleSideNavBar}
+							/>
+						) : (
+							<FontAwesomeIcon
+								icon={faBars}
+								color="white"
+								cursor="pointer"
+								fontSize="32px"
+								onClick={handleToggleSideNavBar}
+							/>
+						)}
+					</Icons>
+				)}
+				<SideBarWrapper showSideNavBar={showSideNavBar}>
+					<SideNavBar />
+				</SideBarWrapper>
+				<ContentWrapper>
+					<h1>KIM NASIL</h1>
+					<span>{professions[professionIndex]}</span>
+				</ContentWrapper>
+			</HomeWrapper>
+			<About />
+			<Skill />
+			<Projects />
+			<Contact />
+		</>
 	);
 };
 
@@ -128,7 +137,7 @@ const ContentWrapper = styled.div`
 	h1 {
 		font-size: 100px;
 	}
-	div {
+	span {
 		font-size: 100px;
 		font-weight: 700;
 	}

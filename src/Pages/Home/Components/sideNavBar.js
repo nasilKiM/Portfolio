@@ -1,11 +1,17 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const SideNavBar = () => {
+	const navigate = useNavigate();
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleToggleSideNavBar = () => {
 		setIsOpen(!isOpen);
+	};
+
+	const handleNavigate = route => {
+		navigate(route);
 	};
 
 	return (
@@ -23,11 +29,11 @@ const SideNavBar = () => {
 					</SNSContainer>
 
 					<MenuWrapper>
-						<span>HOME</span>
-						<span>About</span>
-						<span>Resume</span>
-						<span>Portfolio</span>
-						<span>Contact</span>
+						<span onClick={() => handleNavigate('/')}>HOME</span>
+						<span onClick={() => handleNavigate('/about')}>About</span>
+						<span onClick={() => handleNavigate('/skill')}>Skill</span>
+						<span onClick={() => handleNavigate('/projects')}>Projects</span>
+						<span onClick={() => handleNavigate('/contact')}>Contact</span>
 					</MenuWrapper>
 				</Container>
 			</Wrapper>

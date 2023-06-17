@@ -7,9 +7,6 @@ const ErrorPage = () => {
 
 	return (
 		<S.Wrapper>
-			<S.ImageContainer>
-				<S.ErrorImage src="/Assets/Error.png"></S.ErrorImage>
-			</S.ImageContainer>
 			<S.Text>
 				<S.Emphasize>에러가 발생했습니다!</S.Emphasize>
 				요청해주신 페이지를 찾을 수 없습니다.
@@ -33,24 +30,6 @@ const Wrapper = styled.div`
 	}
 	@media (max-width: 800px) {
 		width: 90%;
-	}
-`;
-
-const ImageContainer = styled.div`
-	margin-top: 100px;
-	margin-bottom: 60px;
-	display: flex;
-	justify-content: center;
-`;
-
-const ErrorImage = styled.div`
-	width: 400px;
-	margin-top: 100px;
-	@media (max-width: 700px) {
-		width: 220px;
-	}
-	@media (max-width: 900px) {
-		width: 300px;
 	}
 `;
 
@@ -91,8 +70,6 @@ const GoMain = styled(Link)`
 
 const S = {
 	Wrapper,
-	ImageContainer,
-	ErrorImage,
 	Text,
 	Emphasize,
 	ButtonBox,
