@@ -55,6 +55,9 @@ const Wrapper = styled.div`
 	padding: 0 15px;
 	background: white;
 	overflow-y: auto;
+	border-right: 1px solid lightgray;
+	background-color: black;
+	color: white;
 `;
 
 const Container = styled.div`

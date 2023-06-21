@@ -45,6 +45,8 @@ export default Projects;
 const Wrapper = styled.div`
 	width: 100%;
 	margin: 0 auto;
+	background-color: black;
+	color: white;
 `;
 
 const Container = styled.div`
