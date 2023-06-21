@@ -31,7 +31,6 @@ const SideNavBar = () => {
 					<MenuWrapper>
 						<span onClick={() => handleNavigate('/')}>HOME</span>
 						<span onClick={() => handleNavigate('/about')}>About</span>
-						<span onClick={() => handleNavigate('/skill')}>Skill</span>
 						<span onClick={() => handleNavigate('/projects')}>Projects</span>
 						<span onClick={() => handleNavigate('/contact')}>Contact</span>
 					</MenuWrapper>

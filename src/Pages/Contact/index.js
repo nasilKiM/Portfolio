@@ -11,9 +11,11 @@ const Contact = () => {
 				</span>{' '}
 				😘
 			</Greetings>
-			<button>github</button>
-			<button>tistory</button>
-			<button>linkedin</button>
+			<SNSContainer>
+				<img src="/Assets/Icon/githubicon.png" />
+				<img src="/Assets/Icon/tistoryicon.png" />
+				<img src="/Assets/Icon/linkedinicon.png" />
+			</SNSContainer>
 		</Container>
 	);
 };
@@ -22,11 +24,11 @@ export default Contact;
 
 const Container = styled.div`
 	max-width: 80%;
+	padding: 50px 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	margin: 0 auto;
-	padding: 20px;
 `;
 
 const Title = styled.h2`
@@ -43,5 +45,20 @@ const Greetings = styled.div`
 	margin-bottom: 30px;
 	span {
 		color: darkblue;
+	}
+`;
+
+const SNSContainer = styled.div`
+	font-size: 18px;
+	padding: 20px 0;
+	text-align: center;
+	img {
+		width: 40px;
+		margin-right: 15px;
+		:hover {
+			border-radius: 50%;
+			border: 1px solid #ffecec;
+			cursor: pointer;
+		}
 	}
 `;
