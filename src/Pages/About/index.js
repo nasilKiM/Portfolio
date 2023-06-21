@@ -19,9 +19,18 @@ const About = () => {
 					<Section2>
 						<SectionTitle>CAREER</SectionTitle>
 						<SectionContent>
-							<ContentItem>직장명</ContentItem>
-							<ContentItem>직장일시</ContentItem>
-							<ContentItem>직업설명</ContentItem>
+							<ContentTitle>Carrot Global</ContentTitle>
+							<ContentItem>2019.04 ~ 2022.08 ( 3 years )</ContentItem>
+							<ContentItem>Team Leader</ContentItem>
+							<ContentItem>-SmartLearning Department-</ContentItem>
+							<ContentItem>job description</ContentItem>
+						</SectionContent>
+						<SectionContent>
+							<ContentTitle>Yonsei University</ContentTitle>
+							<ContentItem>2016.09 ~ 2018.09 ( 2 years )</ContentItem>
+							<ContentItem>Administrative Staff</ContentItem>
+							<ContentItem>Language Research Education Center</ContentItem>
+							<ContentItem>job description</ContentItem>
 						</SectionContent>
 					</Section2>
 					<Section2>
@@ -73,8 +82,8 @@ const Section = styled.div`
 	}
 	span {
 		min-width: 300px;
-		max-width: 600px;
-		font-size: 28px;
+		max-width: 800px;
+		font-size: 26px;
 		line-height: 1.2;
 	}
 `;
@@ -87,6 +96,16 @@ const SectionTitle = styled.h2`
 	font-size: 30px;
 	font-weight: bold;
 	margin-bottom: 10px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid aquamarine;
+`;
+
+const ContentTitle = styled.div`
+	font-size: 20px;
+	margin: 30px 0;
+	background-color: gray;
+	padding: 10px 20px;
+	border-radius: 30px;
 `;
 
 const SectionContent = styled.div`
