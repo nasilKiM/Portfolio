@@ -105,12 +105,13 @@ const MenuWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding-top: 20px;
+	text-align: center;
 	gap: 30px;
 	font-size: 24px;
 	font-weight: bold;
 	span {
 		:hover {
-			color: red;
+			color: aquamarine;
 			cursor: pointer;
 		}
 	}

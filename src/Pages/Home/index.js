@@ -199,7 +199,7 @@ const NavWrapper = styled.div`
 			text-decoration: none;
 		}
 		:hover {
-			color: red;
+			color: aquamarine;
 		}
 	}
 `;
