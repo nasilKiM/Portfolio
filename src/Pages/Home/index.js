@@ -59,13 +59,6 @@ const HomePage = () => {
 		}
 	}, [location.hash]);
 
-	const handleMenuClick = sectionId => {
-		const sectionElement = sectionRefs.current[sectionId];
-		if (sectionElement) {
-			sectionElement.scrollIntoView({ behavior: 'smooth' });
-		}
-	};
-
 	return (
 		<>
 			<Wrapper>
