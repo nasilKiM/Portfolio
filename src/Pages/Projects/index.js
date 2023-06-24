@@ -17,6 +17,7 @@ const Projects = () => {
 							<h4>ZOOP-ZOOP MARKET</h4>
 							<span>2023.04 ~ 2023.06</span>
 							<span>프로젝트 소개글</span>
+							<button>Clone Project</button>
 							<button>repository</button>
 						</Detail>
 					</Project>
@@ -26,6 +27,7 @@ const Projects = () => {
 							<h4>프로젝트명</h4>
 							<span>2023.03.21 ~ 2023.03.27</span>
 							<span>프로젝트 소개글</span>
+							<button>Clone Project</button>
 							<button>repository</button>
 						</Detail>
 					</Project>
@@ -35,6 +37,7 @@ const Projects = () => {
 							<h4>프로젝트명</h4>
 							<span>2023.03.29 ~ 2023.04.02</span>
 							<span>프로젝트 소개글</span>
+							<button>Clone Project</button>
 							<button>repository</button>
 						</Detail>
 					</Project>
@@ -44,6 +47,7 @@ const Projects = () => {
 							<h4>프로젝트명</h4>
 							<span>2023.03.16 ~ 2023.03.20</span>
 							<span>프로젝트 소개글</span>
+							<button>Clone Project</button>
 							<button>repository</button>
 						</Detail>
 					</Project>
@@ -95,9 +99,7 @@ const Select = styled.div`
 	}
 `;
 
-const ProjectContainer = styled.div`
-	width: 70%;
-`;
+const ProjectContainer = styled.div``;
 
 const Project = styled.div`
 	width: 100%;
@@ -106,7 +108,8 @@ const Project = styled.div`
 	margin-bottom: 40px;
 	text-align: left;
 	img {
-		width: 40%;
+		min-width: 300px;
+		max-width: 400px;
 		border: 1px solid gray;
 	}
 `;
@@ -117,4 +120,8 @@ const Detail = styled.div`
 	gap: 10px;
 	padding-left: 30px;
 	padding-top: 20px;
+	button {
+		max-width: 100px;
+		padding: 10px 5px;
+	}
 `;

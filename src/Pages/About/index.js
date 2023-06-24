@@ -34,9 +34,20 @@ const About = () => {
 						</SectionContent>
 					</Section2>
 					<Section2>
-						<SectionTitle>EDUCATION</SectionTitle>
+						<SectionTitle>QUALIFICATION</SectionTitle>
 						<SectionContent>
-							<ContentItem>학력</ContentItem>
+							<ContentTitle>어학</ContentTitle>
+							<ContentItem>기간</ContentItem>
+						</SectionContent>
+						<SectionContent>
+							<ContentTitle>자격증</ContentTitle>
+							<ContentItem>기간</ContentItem>
+						</SectionContent>
+					</Section2>
+					<Section2>
+						<SectionTitle> EDUCATION</SectionTitle>
+						<SectionContent>
+							<ContentTitle>University</ContentTitle>
 							<ContentItem>기간</ContentItem>
 						</SectionContent>
 					</Section2>
@@ -97,7 +108,7 @@ const SectionTitle = styled.h2`
 	font-weight: bold;
 	margin-bottom: 10px;
 	padding-bottom: 20px;
-	border-bottom: 2px solid aquamarine;
+	border-bottom: 5px solid aquamarine;
 `;
 
 const ContentTitle = styled.div`
