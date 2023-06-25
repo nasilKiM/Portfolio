@@ -1,6 +1,9 @@
-import styled from 'styled-components';
+import { useEffect, useState } from 'react';
+import styled, { keyframes } from 'styled-components';
 
 const Skill = () => {
+	const [animatedSkills, setAnimatedSkills] = useState([]);
+
 	const skillsData = [
 		{ label: 'React', percentage: 65 },
 		{ label: 'JavaScript', percentage: 50 },
@@ -8,16 +11,22 @@ const Skill = () => {
 		{ label: 'HTML/CSS', percentage: 90 },
 	];
 
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setAnimatedSkills(skillsData);
+		}, 500);
+		return () => clearTimeout(timer);
+	}, []);
+
 	return (
 		<>
 			<Wrapper>
 				<h2>Skills</h2>
 				<Container>
-					{skillsData.map((skill, index) => (
+					{animatedSkills.map((skill, index) => (
 						<PieChart key={index}>
-							<PieSlice percentage={skill.percentage}>
-								<SliceLabel>{skill.label}</SliceLabel>
-							</PieSlice>
+							<PieSlice percentage={skill.percentage} />
+							<SliceLabel>{skill.label}</SliceLabel>
 						</PieChart>
 					))}
 				</Container>
@@ -49,6 +58,15 @@ const Container = styled.div`
 	justify-content: center;
 `;
 
+const fillAnimation = keyframes`
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+`;
+
 const PieChart = styled.div`
 	width: 180px;
 	height: 180px;
@@ -56,19 +74,20 @@ const PieChart = styled.div`
 	background-color: #f2f2f2;
 	position: relative;
 	overflow: hidden;
+	animation: ${fillAnimation} 1s linear forwards;
 `;
 
 const PieSlice = styled.div`
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	clip-path: ${props =>
+	/* clip-path: ${props =>
 		`polygon(50% 50%, 100% 0, 100% 50%, ${50 - props.percentage / 2}% 50%)`};
 	background-color: ${props =>
-		`hsl(${(props.percentage / 100) * 120}, 70%, 50%)`};
-	transform-origin: 0 50%;
-	transform: rotate(-90deg);
-	transition: transform 0.3s ease;
+		`hsl(${(props.percentage / 100) * 120}, 70%, 50%)`}; */
+	clip-path: ${props =>
+		`polygon(50% 50%, 100% 0, 100% 50%, ${50 - props.percentage / 2}% 50%)`};
+	background-color: ${props => `hsl(${props.color * 360}, 70%, 50%)`};
 `;
 
 const SliceLabel = styled.div`

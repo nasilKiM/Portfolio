@@ -24,7 +24,7 @@ const Projects = () => {
 					<Project>
 						<img />
 						<Detail>
-							<h4>프로젝트명</h4>
+							<h4>Movie Cat-cha!</h4>
 							<span>2023.03.21 ~ 2023.03.27</span>
 							<span>프로젝트 소개글</span>
 							<button>Clone Project</button>
@@ -34,7 +34,7 @@ const Projects = () => {
 					<Project>
 						<img />
 						<Detail>
-							<h4>프로젝트명</h4>
+							<h4>KLL(Search)</h4>
 							<span>2023.03.29 ~ 2023.04.02</span>
 							<span>프로젝트 소개글</span>
 							<button>Clone Project</button>
@@ -44,7 +44,7 @@ const Projects = () => {
 					<Project>
 						<img />
 						<Detail>
-							<h4>프로젝트명</h4>
+							<h4>Git Issue</h4>
 							<span>2023.03.16 ~ 2023.03.20</span>
 							<span>프로젝트 소개글</span>
 							<button>Clone Project</button>
